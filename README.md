@@ -1,34 +1,10 @@
-Here’s a `README.md` file tailored for your **Smart Goal Planner** React project:
+# 💸 Smart Goal Planner
+
+Smart Goal Planner is a simple React application designed for fintech users to manage multiple savings goals with full CRUD (Create, Read, Update, Delete) functionality. It uses a `json-server` backend to store goal data locally.
 
 ---
 
-```markdown
-# 💰 Smart Goal Planner
-
-A simple FinTech React app for managing personal savings goals. Users can view, add, update, and delete their financial goals while tracking progress.
-
----
-
-## 🚀 Features
-
-- ✅ View all savings goals
-- ➕ Add a new savings goal
-- ✏️ Update goal details or progress
-- ❌ Delete a goal
-- 📥 Deposit towards a goal
-- 📊 Visual progress bars for each goal
-
----
-
-## 🛠 Built With
-
-- React (Create React App)
-- JSON Server (for mock backend)
-- Custom CSS
-
----
-
-## 📁 Folder Structure
+## 📁 Project Structure
 
 ```
 
@@ -36,89 +12,145 @@ smart-goal-planner/
 ├── public/
 ├── src/
 │   ├── components/
-│   │   ├── GoalList.js
 │   │   ├── GoalCard.js
 │   │   ├── GoalForm.js
-│   │   ├── DepositForm.js
-│   │   ├── Overview\.js
-│   │   └── ProgressBar.js
-│   ├── App.js
+│   │   └── NavBar.js
+│   ├── pages/
+│   │   ├── Home.js
+│   │   ├── Goals.js
+│   │   └── ErrorPage.js
 │   ├── api.js
+│   ├── App.js
 │   ├── index.js
-│   └── App.css
-├── db.json
+│   └── index.css
+├── db.json ✅
+├── package.json
 └── README.md
 
 ````
 
 ---
 
-## 🖥️ Getting Started
+## 🚀 Features
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/smart-goal-planner.git
-   cd smart-goal-planner
+- View a list of savings goals
+- Create new goals
+- Update existing goals
+- Delete goals
+- Navigation between pages using React Router
+
+---
+
+## 🛠️ Getting Started
+
+### Prerequisites
+
+Make sure you have Node.js and npm installed:
+
+```bash
+node -v
+npm -v
 ````
 
-2. **Install dependencies**
+---
+
+### 🔧 Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/yourusername/smart-goal-planner.git
+   cd smart-goal-planner
+   ```
+
+2. Install dependencies:
 
    ```bash
    npm install
    ```
 
-3. **Start JSON server**
+---
+
+### 📦 Setting Up the Backend (`json-server`)
+
+1. Create a `db.json` file in the root folder with the following structure:
+
+   ```json
+   {
+     "goals": [
+       {
+         "id": 1,
+         "title": "Save for Emergency Fund",
+         "targetAmount": 100000,
+         "currentAmount": 25000
+       },
+       {
+         "id": 2,
+         "title": "Vacation to Mombasa",
+         "targetAmount": 50000,
+         "currentAmount": 10000
+       }
+     ]
+   }
+   ```
+
+2. Start the JSON server:
 
    ```bash
    npx json-server --watch db.json --port 3001
    ```
 
-4. **Start React development server**
-
-   ```bash
-   npm start
-   ```
+   The server will be available at:
+   `http://localhost:3001/goals`
 
 ---
 
-## 🗃️ Sample `db.json`
+### 🖥️ Run the Frontend App
 
-```json
-{
-  "goals": [
-    {
-      "id": 1,
-      "title": "Buy a Laptop",
-      "targetAmount": 800,
-      "currentAmount": 200
-    },
-    {
-      "id": 2,
-      "title": "Emergency Fund",
-      "targetAmount": 1000,
-      "currentAmount": 450
-    }
-  ]
-}
+In another terminal:
+
+```bash
+npm start
 ```
 
----
-
-## 🧠 Future Improvements
-
-* User authentication
-* Goal deadlines and reminders
-* Currency selector
+This will run the React app on:
+`http://localhost:3000`
 
 ---
 
-## 📄 License
+## 🔁 API Endpoints
 
-MIT License
+* `GET /goals` – Fetch all goals
+* `POST /goals` – Add a new goal
+* `PATCH /goals/:id` – Update a goal
+* `DELETE /goals/:id` – Delete a goal
 
 ---
 
-## ✨ Author
+## 🧪 Testing
 
-**Sydney Osindi** – [@sydneyosindi](https://github.com/sydneyosindi)
+Visit `http://localhost:3000` and interact with your app. Create, edit, and delete goals, and confirm the JSON data updates in `db.json`.
 
+---
+
+## 🧳 Deployment
+
+You can deploy your frontend using:
+
+* [Netlify](https://netlify.com/)
+* [Vercel](https://vercel.com/)
+
+If needed, you can also deploy your `json-server` backend using [Render](https://render.com/) for free.
+
+---
+
+## 📌 Notes
+
+* This project uses `react-router-dom` for client-side routing.
+* Backend is mocked using `json-server`. Not intended for production use.
+
+---
+
+## 👨‍💻 Author
+
+**Sydney Osindi**
